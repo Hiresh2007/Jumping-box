@@ -38,16 +38,25 @@ function setup(){
      ball.velocityY = 4;
      ball.velocityX = 4;
 
-     if(ball.isTouching(surface1)){
+     
+
+}
+
+function draw() {
+    background(rgb(169,169,169));
+    //create edgeSprite
+    edges=createEdgeSprites();
+    ball.bounceOff(edges);
+    if(ball.isTouching(surface1)){
         ball.velocityY = 0;
         ball.velocityX = 0;
-        ball.shapeColor =   rgb(40,40,155);
+        ball.shapeColor =   rgb(50,50,155);
         
      }
      if( ball.isTouching(surface2)){
         ball.velocityY = 0;
         ball.velocityX = 0;
-        ball.shapeColor = rgb(50,50,255);
+        ball.shapeColor = rgb(40,40,255);
         
      }
      if(ball.isTouching(surface4)){
@@ -59,17 +68,8 @@ function setup(){
      if( ball.isTouching(surface3)){
         ball.velocityY = 0;
         ball.velocityX = 0;
-        ball.shapeColor =  rgb(0,20,55);
+        ball.shapeColor =  rgb(10,10,55);
      }
-
-}
-
-function draw() {
-    background(rgb(169,169,169));
-    //create edgeSprite
-    edges=createEdgeSprites();
-    ball.bounceOff(edges);
-
 
     //add condition to check if box touching surface and make it box
     drawSprites();
